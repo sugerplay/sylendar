@@ -1,0 +1,265 @@
+.sylendar-root
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sylendar-root .border-line
+{
+    border: 1px #dddddd solid;
+}
+
+.sylendar-root.unselectable
+{
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    
+    /* No support for these yet, use at own risk */
+    -o-user-select: none;
+    user-select: none; 
+}
+
+.sylendar-root .cell
+{
+    float: left;
+    width: 14.28571428571429%;
+    height: 100%;
+}
+
+.sylendar-root > .top
+{
+    position: relative;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    /*faborder-top: 0px;*/
+    border-bottom: 0px;
+    
+    table-layout: fixed;
+}
+
+.sylendar-root > .top .cell
+{
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 3px;
+}
+
+.sylendar-root > .bottom
+{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 25px);
+    
+    border-top: 0px;
+    border-left: 0px;
+}
+
+.sylendar-root > .bottom > .template-board
+{
+    width: 100%;
+    height: 100%;
+}
+
+.sylendar-root > .bottom > .event-board
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.sylendar-root > .bottom .row
+{
+    position: absolute;
+    width: 100%;
+    min-width: 0%;
+    max-width: 100%;
+    margin: 0 auto;
+    
+    color: #000;
+    cursor: default;
+}
+
+.sylendar-root .row .template-cell
+{
+    position: relative;
+    
+    border-right: 0px;
+    border-bottom: 0px;
+    vertical-align: top;
+    padding: 3px 5px;
+    
+    font-family: Arial, 'Malgun Gothic', sans-serif;
+    font-size: 12px;
+}
+
+.sylendar-root .row .template-cell.today
+{
+    background-color: #f9f9f9;
+}
+
+.sylendar-root .row .template-cell.selected
+{
+    background-color: #f0f0f0;
+}
+
+.sylendar-root .row .template-cell.today.selected
+{
+    background-color: #e6e6e6;
+}
+
+.sylendar-root .indexer
+{
+    color: black;
+}
+
+.sylendar-root .indexer.gray
+{
+    color: #bbbbbb;
+}
+
+.sylendar-root .indexer.sunday
+{
+    color: #c44848;
+}
+
+.sylendar-root .indexer.gray.sunday
+{
+    color: #e48f8f;
+}
+
+.sylendar-root .indexer.saturday
+{
+    color: #447cd0;
+}
+
+.sylendar-root .indexer.gray.saturday
+{
+    color: #88aadd;
+}
+
+.sylendar-root .row-table .date-row
+{
+    height: 15px;
+}
+
+.sylendar-root .row-table .date-cell
+{
+    height: 15px;
+    position: relative;
+    padding: 3px 6px;
+    
+    font-family: Arial, 'Malgun Gothic', sans-serif;
+    font-size: 12px;
+}
+
+.sylendar-root .row-table .date-cell.gray
+{
+    color: #bbbbbb;
+}
+
+.event-board .event
+{
+    position: absolute;
+    top: 21px;
+    width: 100%;
+    height: 22px;
+    line-height: 22px;
+    
+    cursor: pointer;
+    
+    pointer-events: auto;
+    font-size: 12px;
+}
+
+.event-board .event.event-template
+{
+    background-color: #E8E8E8;
+    color: black;
+}
+
+.event-board .event.event-template.hight-lighted
+{
+    background-color: #F7F7F7;
+    color: black;
+}
+
+.event-board .event.event-template:after
+{
+    /*content: "";*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*border-bottom: 11px solid transparent;*/
+    /*border-left: 11px solid #707070;*/
+    /*border-top: 11px solid transparent;*/
+}
+
+.event-board .event.event-template
+{
+}
+
+.event-board .event.ellipsis
+{
+    width: auto;
+    color: #404040;
+}
+
+.event-board .event.ellipsis:hover
+{
+    text-decoration: underline;
+}
+
+.event-board .event .pin
+{
+    float: left;
+    width: 22px;
+    height: 22px;
+    
+    background-position: center;
+    background-color: rgba(0,0,0,0.1);
+    
+    cursor: -webkit-zoom-in;
+}
+
+.event-board .event .pin:hover
+{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.event-board .event .pin.short
+{
+    background-image: url(/images/icons/ic_short.png);
+}
+
+.event-board .event .pin.long
+{
+    background-image: url(/images/icons/ic_long.png);
+}
+
+.event-board .event .pin.disabled,
+    .event-board .event .pin.disabled:hover
+{
+    background-image: none;
+    background-color: rgba(0,0,0,0.2);
+    width: 2px;
+}
+
+.event-board .event .summary
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    padding: 0 6px;
+}
+
+.event-board .event .summary.expired
+{
+    color: #a0a0a0;
+}
