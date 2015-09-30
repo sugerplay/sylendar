@@ -102,6 +102,25 @@ Date.prototype.cutTimes = function () {
   this.setSeconds(0);
   return this;
 }
+
+function getCountOfWeek (initial, final) {
+  var initialWeekDay = initial.getDay();
+  var finalWeekDay = final.getDay();
+  var period = final.intervalByDate(initial);
+  
+  var count = 0;
+  var wd = initialWeekDay;
+  if (wd != 0) {
+    count++;
+    wd = 0;
+    
+    period -= 7 - wd;
+  }
+
+  count += Math.gauce(period / 7);
+  
+  return count;
+}
     
 function getCountOfWeekInMonth (year, month) {
   var lastMonthDate = getLastDateOfMonth(year, month);

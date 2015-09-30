@@ -9,16 +9,19 @@ module.exports = function(grunt) {
 				src: [
 					'src/intro.js',
 					'src/date.js',
+					'src/utility.js',
+					'src/object.js',
 					'src/core.js',
+					'src/sylendar.js',
 					'src/outro.js'
 				],
-				dest: 'dist/build.js',
+				dest: 'dist/sylendar.js',
 			}
 		},
     uglify: {
       build: {
         files: {
-          'dist/build.min.js': ['dist/build.js']
+          'dist/sylendar.min.js': ['dist/sylendar.js']
         }
       }
     }
